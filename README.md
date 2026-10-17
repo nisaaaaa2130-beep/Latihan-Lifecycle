@@ -1,10 +1,12 @@
 ## Tugas 1 - Merancang UI Mobile
 
-Aplikasi Android berbasis Kotlin & XML di Android Studio.
+<table>
+  <tr>
+    <td width="50%" valign="top">
 
 ### 📱 Fitur Utama
-1. **Layar 1 (MainActivity)**: Halaman Beranda dengan profil, form input, dan tombol aksi.
-2. **Layar 2 (SecondActivity)**: Halaman Detail Portofolio & Skill Set Mahasiswa.
+1. **MainActivity**: Beranda, Profil, Form Input.
+2. **SecondActivity**: Detail Portofolio & Skill Set.
 
 ### 🛠️ Komponen UI
 * **ViewGroup**: LinearLayout, ScrollView
@@ -12,15 +14,17 @@ Aplikasi Android berbasis Kotlin & XML di Android Studio.
 * **Resource**: strings.xml, colors.xml
 
 ### 🚀 Cara Menjalankan
-1. Build & Install via Terminal: `./gradlew installDebug`
-2. Buka Layar Kedua via ADB: `adb shell am start -n com.example.lificycledemo/.SecondActivity`
+* `./gradlew installDebug`
 
-### 📸 Tangkapan Layar (Screenshot)
+    </td>
+    <td width="50%" align="center" valign="top">
 
-<div align="center">
+### 📸 Screenshot
 
-| Layar 1 (Profil) | Layar 2 (Portofolio) |
+| Layar 1 | Layar 2 |
 | :---: | :---: |
 | <img src="screen1.jpeg" width="190" /> | <img src="screen2.jpeg" width="190" /> |
 
-</div>
+    </td>
+  </tr>
+</table>
