@@ -9,9 +9,9 @@ Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan K
 
 🛠️ Komponen UI Dasar yang Digunakan
 
-- View Group: LinearLayout, ConstraintLayout, ScrollView
-- View Widgets: TextView, ImageView, Button
-- Resource Management: strings.xml, colors.xml
+* ViewGroup: LinearLayout, ConstraintLayout, ScrollView
+* View Widgets: TextView, ImageView, Button
+* Resource Management: strings.xml, colors.xml
 
 🚀 Cara Menjalankan Aplikasi
 
@@ -20,6 +20,10 @@ Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan K
 
 📸 Tangkapan Layar (Screenshot)
 
+<div align="center">
+
 | Layar 1 (Beranda) | Layar 2 (Detail Hewan) |
 | :---: | :---: |
-| <img src="screen1.jpeg" width="220" /> | <img src="screen2.jpeg" width="220" /> |
+| <img src="screen1.jpeg" width="160" /> | <img src="screen2.jpeg" width="160" /> |
+
+</div>
