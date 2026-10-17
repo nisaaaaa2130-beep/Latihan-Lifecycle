@@ -1,29 +1,26 @@
-#Tugas 1 - Merancang Antarmuka (UI) Dasar Aplikasi Mobile
+## Tugas 1 - Merancang UI Mobile
 
-Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan Kotlin dan XML di Android Studio.
+Aplikasi Android berbasis Kotlin & XML di Android Studio.
 
-#📱 Fitur & Layar Aplikasi
+### 📱 Fitur Utama
+1. **Layar 1 (MainActivity)**: Halaman Beranda dengan profil, form input, dan tombol aksi.
+2. **Layar 2 (SecondActivity)**: Halaman Detail Portofolio & Skill Set Mahasiswa.
 
-1. **Layar 1 (MainActivity)**: Halaman Sambutan / Beranda dengan sapaan ramah dan tombol "Mulai Belajar" ke menu pilihan hewan.
-2. **Layar 2 (SecondActivity)**: Halaman Detail Hewan (Kucing) lengkap dengan informasi makanan favorit, suara, dan status lifecycle aplikasi.
+### 🛠️ Komponen UI
+* **ViewGroup**: LinearLayout, ScrollView
+* **Widgets**: TextView, EditText, ImageView, Button
+* **Resource**: strings.xml, colors.xml
 
-#🛠️ Komponen UI Dasar yang Digunakan
+### 🚀 Cara Menjalankan
+1. Build & Install via Terminal: `./gradlew installDebug`
+2. Buka Layar Kedua via ADB: `adb shell am start -n com.example.lificycledemo/.SecondActivity`
 
-* **ViewGroup**: LinearLayout, ConstraintLayout, ScrollView
-* **View Widgets**: TextView, ImageView, Button
-* **Resource Management**: strings.xml, colors.xml
-
-#🚀 Cara Menjalankan Aplikasi
-
-1. Build & Install ke HP via Terminal: `./gradlew installDebug`
-2. Buka aplikasi di perangkat Android atau Emulator yang terhubung.
-
-#📸 Tangkapan Layar (Screenshot)
+### 📸 Tangkapan Layar (Screenshot)
 
 <div align="center">
 
-| Layar 1 (Beranda) | Layar 2 (Detail Hewan) |
+| Layar 1 (Profil) | Layar 2 (Portofolio) |
 | :---: | :---: |
-| <img src="screen1.jpeg" width="210" /> | <img src="screen2.jpeg" width="210" /> |
+| <img src="screen1.jpeg" width="190" /> | <img src="screen2.jpeg" width="190" /> |
 
 </div>
