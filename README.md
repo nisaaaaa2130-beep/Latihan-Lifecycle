@@ -24,6 +24,6 @@ Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan K
 
 | Layar 1 (Beranda) | Layar 2 (Detail Hewan) |
 | :---: | :---: |
-| <img src="screen1.jpeg" width="160" /> | <img src="screen2.jpeg" width="160" /> |
+| <img src="screen1.jpeg" width="135" /> | <img src="screen2.jpeg" width="135" /> |
 
 </div>
