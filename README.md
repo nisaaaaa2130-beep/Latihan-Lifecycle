@@ -7,7 +7,7 @@ Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan K
 1. Layar 1 (MainActivity): Halaman Sambutan / Beranda dengan sapaan ramah dan tombol "Mulai Belajar" ke menu pilihan hewan.
 2. Layar 2 (SecondActivity): Halaman Detail Hewan (Kucing) lengkap dengan informasi makanan favorit, suara, dan status lifecycle aplikasi.
 
-🛠️ Komponen UI Dasar yang Digunakan
+## 🛠️ Komponen UI Dasar yang Digunakan
 
 - ViewGroup: LinearLayout, ConstraintLayout, ScrollView
 - View Widgets: TextView, ImageView, Button
@@ -24,6 +24,6 @@ Aplikasi Belajar Mengenal Hewan berbasis Android yang dikembangkan menggunakan K
 
 | Layar 1 (Beranda) | Layar 2 (Detail Hewan) |
 | :---: | :---: |
-| <img src="screen1.jpeg" width="135" /> | <img src="screen2.jpeg" width="135" /> |
+| <img src="screen1.jpeg" width="160" /> | <img src="screen2.jpeg" width="160" /> |
 
 </div>
