@@ -1,28 +1,48 @@
-# Tugas - Ensiklopedia Hewan (Aplikasi Mobile 4-Tier)
+Ensiklopedia Hewan (Aplikasi Mobile 4-Tier)
 
-Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunakan Kotlin dan Jetpack Compose/XML di Android Studio.
+Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunakan Kotlin dan Jetpack Compose/XML di Android Studio. Aplikasi ini dirancang untuk tugas pemrograman mobile guna mempelajari navigasi multi-layar, *lifecycle*, dan transfer data antar *Activity*.
 
-## 📱 Fitur & Layar Aplikasi (4-Tier Architecture)
+📱 Fitur & Layar Aplikasi (4-Tier Architecture)
 
-1. **Layar 1 (MainActivity)**: Halaman Sambutan / Beranda dengan input nama dinamis (*Extra User*) dan tombol navigasi ke menu kategori hewan.
-2. **Layar 2 (SecondActivity)**: Halaman Kategori Hewan dengan pilihan kelompok umur dan transisi data intent.
-3. **Layar 3 (ThirdActivity)**: Halaman Daftar Hewan Peliharaan (*Hewan Peliharaan*) yang menampilkan detail data seperti Kucing Persia, Kucing Anggora, Kucing Domestik, Kelinci, Ikan Hias, Hamster, dan Marmut.
-4. **Layar 4 (FourthActivity)**: Halaman Detail / Informasi Lanjutan terkait karakteristik dan perawatan hewan.
+1. Layar 1 (MainActivity): Halaman Sambutan / Beranda dengan input nama dinamis (*Extra User*) dan tombol navigasi ke menu kategori hewan.
+2. Layar 2 (SecondActivity): Halaman Kategori Hewan dengan pilihan kelompok umur dan transisi data intent.
+3. Layar 3 (ThirdActivity): Halaman Daftar Hewan Peliharaan (*Hewan Peliharaan*) yang menampilkan detail data seperti Kucing Persia, Kucing Anggora, Kucing Domestik, Kelinci, Ikan Hias, Hamster, dan Marmut.
+4. Layar 4 (FourthActivity): Halaman Detail / Informasi Lanjutan terkait karakteristik dan perawatan hewan.
 
-## 🛠️ Komponen & Teknologi yang Digunakan
+🛠️ Komponen & Teknologi yang Digunakan
 
-- **Bahasa**: Kotlin, Jetpack Compose / XML Layouts
-- **Komponen**: Activity Lifecycle, Intent Data Passing (`EXTRA_USER`, `EXTRA_KATEGORI`), RecyclerView / LazyColumn
-- **Resource Management**: strings.xml, colors.xml
+- **Bahasa & Framework**: Kotlin, Jetpack Compose / XML Layouts
+- **Komponen Utama**: Activity Lifecycle, Intent Data Passing (`EXTRA_USER`, `EXTRA_KATEGORI`), RecyclerView / LazyColumn
+- **Resource Management**: `strings.xml`, `colors.xml`
 
-## 🚀 Cara Menjalankan Aplikasi
+🚀 Cara Menjalankan Aplikasi (Langsung di HP)
 
-1. Buka project di Android Studio.
-2. Hubungkan perangkat fisik atau nyalakan Emulator Android.
-3. Klik tombol **Run (Shift + F10)** untuk *build* dan *install* aplikasi ke perangkat.
+1. **Persiapan HP**:
+   - Aktifkan **Developer Options** (Opsi Pengembang) di HP Android kamu.
+   - Aktifkan fitur **USB Debugging** di dalam menu Opsi Pengembang.
+   - Sambungkan HP ke laptop menggunakan kabel USB.
+2. **Buka Project di Android Studio**:
+   - Clone repository ini atau buka folder project-mu:
+     ```bash
+     git clone [https://github.com/nisaaaaa2130-beep/Latihan-Lifecycle.git](https://github.com/nisaaaaa2130-beep/Latihan-Lifecycle.git)
+     ```
+   - Tunggu proses *Gradle Sync* sampai selesai.
+3. **Jalankan Aplikasi**:
+   - Di bagian atas Android Studio, pastikan perangkat yang dipilih adalah nama HP fisikmu (bukan emulator).
+   - Klik tombol **Run (ikon play hijau / Shift + F10)** untuk *build* dan *install* aplikasi secara otomatis langsung ke HP-mu.
 
-## 📸 Tangkapan Layar (Screenshot)
+📸 Tangkapan Layar (Screenshot)
 
 | Layar 1 (Beranda) | Layar 2 (Kategori) | Layar 3 (Hewan Peliharaan) | Layar 4 (Detail) |
 | :---: | :---: | :---: | :---: |
-| ![Layar 1](screen_1.jpeg) | ![Layar 2](screen_2.jpeg) | ![Layar 3](screen_3.jpeg) | ![Layar 4](screen_4.jpeg) |
+| ![Layar 1](screen1.jpeg) | ![Layar 2](screen2.jpeg) | ![Layar 3](screen3.jpeg) | ![Layar 4](screen4.jpeg) |
+
+🎥 Demo Aplikasi
+
+Berikut adalah video demonstrasi penggunaan aplikasi:
+
+▶️ **[Tonton Video Demo Aplikasi (MP4)](demo_aplikasi.mp4)**  
+*(Klik file `demo_aplikasi.mp4` di repository untuk memutar video demo alur aplikasi dari awal sampai akhir).*
+
+---
+Dikembangkan untuk pembelajaran Pemrograman Mobile.
