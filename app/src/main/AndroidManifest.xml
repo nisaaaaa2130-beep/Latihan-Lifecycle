@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LatihanLifecycle">
+
+        <!-- Activity Utama (Login / Layar Pertama) -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -19,10 +21,25 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Activity Kategori Hewan (Layar Kedua) -->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="false" />
+
+        <!-- Activity Detail Hewan (Layar Ketiga) -->
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
+
+        <!-- Activity Detail Hewan (Layar Keempat) -->
+        <activity
+            android:name=".FourthActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
