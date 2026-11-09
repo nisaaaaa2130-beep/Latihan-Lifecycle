@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,8 +27,7 @@ class MainActivity : ComponentActivity() {
         const val EXTRA_NAMA = "extra_nama"
         const val EXTRA_EMAIL = "extra_email"
         const val EXTRA_KATEGORI = "extra_kategori"
-
-        const val EXTRA_USER = "extra_user" // <-- TAMBAHKAN INI
+        const val EXTRA_USER = "extra_user"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +36,10 @@ class MainActivity : ComponentActivity() {
             var nama by remember { mutableStateOf("") }
             var email by remember { mutableStateOf("") }
             var selectedCategory by remember { mutableStateOf("Anak-anak (5-12 Tahun)") }
+
+            // Variabel untuk menyimpan pesan error masing-masing input
+            var namaError by remember { mutableStateOf<String?>(null) }
+            var emailError by remember { mutableStateOf<String?>(null) }
 
             val categories = listOf("Anak-anak (5-12 Tahun)", "Remaja (13-19 Tahun)", "Dewasa (20+ Tahun)")
             var expanded by remember { mutableStateOf(false) }
@@ -65,7 +67,7 @@ class MainActivity : ComponentActivity() {
                             .fillMaxWidth()
                             .verticalScroll(rememberScrollState()),
                         shape = RoundedCornerShape(32.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFFF1F8E9)), // Hijau sangat muda
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFFF1F8E9)),
                         elevation = CardDefaults.cardElevation(16.dp)
                     ) {
                         Column(
@@ -74,7 +76,6 @@ class MainActivity : ComponentActivity() {
                                 .padding(24.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            // Bagian Header Hewan & Suasana Hutan yang Ramai
                             Text(
                                 text = "🦁 🌿 🐼 🦜 🐯",
                                 fontSize = 26.sp,
@@ -103,32 +104,62 @@ class MainActivity : ComponentActivity() {
                             // Input Nama
                             OutlinedTextField(
                                 value = nama,
-                                onValueChange = { nama = it },
+                                onValueChange = {
+                                    nama = it
+                                    if (namaError != null) namaError = null // Reset error saat diketik ulang
+                                },
                                 label = { Text("Nama Petualang") },
                                 placeholder = { Text("Minimal 2 karakter") },
                                 modifier = Modifier.fillMaxWidth(),
                                 shape = RoundedCornerShape(16.dp),
+                                isError = namaError != null, // Garis jadi merah jika ada error
                                 colors = OutlinedTextFieldDefaults.colors(
                                     focusedBorderColor = Color(0xFF2E7D32),
                                     focusedLabelColor = Color(0xFF2E7D32)
                                 )
                             )
+                            // Menampilkan teks error merah di bawah input nama jika tidak valid
+                            if (namaError != null) {
+                                Text(
+                                    text = namaError!!,
+                                    color = MaterialTheme.colorScheme.error,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(start = 8.dp, top = 4.dp)
+                                )
+                            }
 
                             Spacer(modifier = Modifier.height(12.dp))
 
                             // Input Email
                             OutlinedTextField(
                                 value = email,
-                                onValueChange = { email = it },
+                                onValueChange = {
+                                    email = it
+                                    if (emailError != null) emailError = null // Reset error saat diketik ulang
+                                },
                                 label = { Text("Alamat Email (Wajib ada '@')") },
                                 placeholder = { Text("contoh: rina@gmail.com") },
                                 modifier = Modifier.fillMaxWidth(),
                                 shape = RoundedCornerShape(16.dp),
+                                isError = emailError != null, // Garis jadi merah jika ada error
                                 colors = OutlinedTextFieldDefaults.colors(
                                     focusedBorderColor = Color(0xFF2E7D32),
                                     focusedLabelColor = Color(0xFF2E7D32)
                                 )
                             )
+                            // Menampilkan teks error merah di bawah input email jika kurang dari 2 karakter / tidak ada @
+                            if (emailError != null) {
+                                Text(
+                                    text = emailError!!,
+                                    color = MaterialTheme.colorScheme.error,
+                                    fontSize = 12.sp,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(start = 8.dp, top = 4.dp)
+                                )
+                            }
 
                             Spacer(modifier = Modifier.height(16.dp))
 
@@ -178,23 +209,37 @@ class MainActivity : ComponentActivity() {
                                     val trimNama = nama.trim()
                                     val trimEmail = email.trim()
 
-                                    // Validasi Sesuai Aturan
-                                    if (trimNama.isEmpty() || trimEmail.isEmpty()) {
-                                        Toast.makeText(this@MainActivity, "Nama dan Email tidak boleh kosong!", Toast.LENGTH_SHORT).show()
-                                    } else if (trimNama.length < 2) {
-                                        Toast.makeText(this@MainActivity, "Nama minimal harus 2 karakter ya!", Toast.LENGTH_SHORT).show()
-                                    } else if (!trimEmail.contains("@")) {
-                                        Toast.makeText(this@MainActivity, "Format email wajib mengandung karakter '@'!", Toast.LENGTH_SHORT).show()
-                                    } else {
-                                        Toast.makeText(this@MainActivity, "Login Berhasil, Halo $trimNama! 🐒", Toast.LENGTH_SHORT).show()
-
-                                        // Pindah ke SecondActivity sambil bawa data nama, email, dan kategori umur
-                                        val intent = Intent(this@MainActivity, SecondActivity::class.java).apply {
-                                            putExtra(EXTRA_NAMA, trimNama)
-                                            putExtra(EXTRA_EMAIL, trimEmail)
-                                            putExtra(EXTRA_KATEGORI, selectedCategory)
+                                    // Validasi dengan menampilkan pesan error merah di bawah field
+                                    when {
+                                        trimNama.isEmpty() -> {
+                                            namaError = "Nama tidak boleh kosong!"
                                         }
-                                        startActivity(intent)
+                                        trimNama.length < 2 -> {
+                                            namaError = "Nama minimal harus 2 karakter!"
+                                        }
+                                        trimEmail.isEmpty() -> {
+                                            emailError = "Email tidak boleh kosong!"
+                                        }
+                                        trimEmail.length < 2 -> {
+                                            emailError = "Email minimal harus 2 karakter!"
+                                        }
+                                        !trimEmail.contains("@") -> {
+                                            emailError = "Format email wajib mengandung karakter '@'!"
+                                        }
+                                        else -> {
+                                            // Jika lolos semua validasi, reset error dan pindah halaman
+                                            namaError = null
+                                            emailError = null
+
+                                            Toast.makeText(this@MainActivity, "Login Berhasil, Halo $trimNama! 🐒", Toast.LENGTH_SHORT).show()
+
+                                            val intent = Intent(this@MainActivity, SecondActivity::class.java).apply {
+                                                putExtra(EXTRA_NAMA, trimNama)
+                                                putExtra(EXTRA_EMAIL, trimEmail)
+                                                putExtra(EXTRA_KATEGORI, selectedCategory)
+                                            }
+                                            startActivity(intent)
+                                        }
                                     }
                                 },
                                 modifier = Modifier
