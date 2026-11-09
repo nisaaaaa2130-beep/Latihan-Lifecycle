@@ -1,18 +1,19 @@
 # Ensiklopedia Hewan (Aplikasi Mobile 4-Tier)
 
-Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunakan Kotlin dan Jetpack Compose/XML di Android Studio. Aplikasi ini dirancang untuk tugas pemrograman mobile guna mempelajari navigasi multi-layar, *lifecycle*, dan transfer data antar *Activity*.
+Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunakan Kotlin dan Jetpack Compose/XML di Android Studio. Aplikasi ini dirancang untuk tugas pemrograman mobile guna mempelajari navigasi multi-layar, *lifecycle*, transfer data antar *Activity*, serta penanganan **validasi input dinamis**.
 
-## 📱 Fitur & Layar Aplikasi (4-Tier Architecture)
+## 📱 Fitur & Layar Aplikasi (4-Tier Architecture - 5 Layar)
 
-1. **Layar 1 (MainActivity)**: Halaman Sambutan / Beranda dengan input nama dinamis (*Extra User*) dan tombol navigasi ke menu kategori hewan.
-2. **Layar 2 (SecondActivity)**: Halaman Kategori Hewan dengan pilihan kelompok umur dan transisi data intent.
-3. **Layar 3 (ThirdActivity)**: Halaman Daftar Hewan Peliharaan (*Hewan Peliharaan*) yang menampilkan detail data seperti Kucing Persia, Kucing Anggora, Kucing Domestik, Kelinci, Ikan Hias, Hamster, dan Marmut.
-4. **Layar 4 (FourthActivity)**: Halaman Detail / Informasi Lanjutan terkait karakteristik dan perawatan hewan.
+1. **Layar 1 (MainActivity - Beranda)**: Halaman sambutan untuk memasukkan nama, email petualang, dan memilih kategori usia.
+2. **Layar 2 (Validasi Input / Error State)**: Tampilan validasi input interaktif. Jika kolom kosong, kurang dari 2 karakter, atau email tidak mengandung `@`, garis kolom berubah menjadi **merah** dan menampilkan pesan error secara langsung.
+3. **Layar 3 (SecondActivity - Kategori Umur)**: Halaman yang menampilkan sapaan nama pengguna secara dinamis (*Intent Extra*) serta pilihan kelompok hewan berdasarkan usia.
+4. **Layar 4 (ThirdActivity - Daftar Hewan Peliharaan)**: Halaman daftar hewan peliharaan (*Hewan Peliharaan*) yang menampilkan berbagai pilihan seperti Kucing Persia, Kucing Anggora, Kucing Domestik, Kelinci, Ikan Hias, Hamster, dan Marmut.
+5. **Layar 5 (FourthActivity - Detail Hewan)**: Halaman detail lengkap mengenai karakteristik, habitat, makanan, dan panduan perawatan hewan.
 
 ## 🛠️ Komponen & Teknologi yang Digunakan
 
 - **Bahasa & Framework**: Kotlin, Jetpack Compose / XML Layouts
-- **Komponen Utama**: Activity Lifecycle, Intent Data Passing (`EXTRA_USER`, `EXTRA_KATEGORI`), RecyclerView / LazyColumn
+- **Komponen Utama**: Activity Lifecycle, Intent Data Passing (`EXTRA_USER`, `EXTRA_KATEGORI`, `EXTRA_NAMA`, `EXTRA_EMAIL`), Custom Validation with `isError` State
 - **Resource Management**: `strings.xml`, `colors.xml`
 
 ## 🚀 Cara Menjalankan Aplikasi (Langsung di HP)
@@ -34,16 +35,16 @@ Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunak
 
 ## 📸 Tangkapan Layar (Screenshot)
 
-| Layar 1 (Beranda) | Layar 2 (invalid input) |Layar 3 (Kategori) | Layar 4 (Hewan Peliharaan) | Layar 5 (Detail) |
+| Layar 1 (Beranda) | Layar 2 (Invalid Input) | Layar 3 (Kategori) | Layar 4 (Hewan Peliharaan) | Layar 5 (Detail Hewan) |
 | :---: | :---: | :---: | :---: | :---: |
-| ![Layar 1](screen_1.jpeg) | ![Layar 2](screen_2.jpeg) | ![Layar 3](screen_3.jpeg) | ![Layar 4](screen_4.jpeg) | ![Layar 4](screen_5.jpeg)
+| ![Layar 1](screen_1.jpeg) | ![Layar 2](screen_2.jpeg) | ![Layar 3](screen_3.jpeg) | ![Layar 4](screen_4.jpeg) | ![Layar 5](screen_5.jpeg) |
 
 ## 🎥 Demo Aplikasi
 
 Berikut adalah video demonstrasi penggunaan aplikasi:
 
-📹 **Video Demo Aplikasi:** 👉 **[Download & Tonton Video Demo (MP4)](demo_aplikasi.mp4)**  
-*(Klik tautan di atas atau pilih file `demo_aplikasi.mp4` di repository GitHub, lalu klik "View raw" untuk mengunduh atau memutar video demonya).*
+📹 **Video Demo Aplikasi:** 👉 **[Download & Tonton Video Demo (MP4)](demo_apk.mp4)**  
+*(Klik tautan di atas atau pilih file `demo_apk.mp4` di repository GitHub, lalu klik "View raw" untuk mengunduh atau memutar video demonya).*
 
 ---
 *Dikembangkan untuk pembelajaran Pemrograman Mobile.*
