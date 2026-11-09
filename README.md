@@ -37,7 +37,7 @@ Aplikasi **Belajar Mengenal Hewan** berbasis Android yang dikembangkan menggunak
 
 | Layar 1 (Beranda) | Layar 2 (Invalid Input) | Layar 3 (Kategori) | Layar 4 (Hewan Peliharaan) | Layar 5 (Detail Hewan) |
 | :---: | :---: | :---: | :---: | :---: |
-| <img src="screen_1.jpeg" width="180"> | <img src="screen_2.jpeg" width="190"> | <img src="screen_3.jpeg" width="180"> | <img src="screen_4.jpeg" width="150"> | <img src="screen_5.jpeg" width="180"> |
+| <img src="screen_1.jpeg" width="180"> | <img src="screen_2.jpeg" width="190"> | <img src="screen_3.jpeg" width="180"> | <img src="screen_4.jpeg" width="130"> | <img src="screen_5.jpeg" width="195"> |
 
 ## 🎥 Demo Aplikasi
 
